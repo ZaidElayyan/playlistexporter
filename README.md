@@ -13,6 +13,17 @@ A modern web application to view and export your YouTube playlists to CSV and JS
 - **PWA Support** - Install as a standalone app on your device
 - **Offline Capable** - Works offline after initial load (with cached data)
 
+## Screenshots
+
+![Playlist Grid](docs/screenshots/youtube_playlist_exporter_1.png)
+*Browse your YouTube playlists*
+
+![Playlist Details](docs/screenshots/youtube_playlist_exporter_2.png)
+*View playlist contents and export to CSV or JSON*
+
+![Export Complete](docs/screenshots/youtube_playlist_exporter_3.png)
+*Export complete - files ready for download*
+
 ## Tech Stack
 
 - **React 18** - Modern React with hooks and TypeScript
